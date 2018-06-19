@@ -1,13 +1,28 @@
 module.exports = function(app, db) {
-    app.post('/notes', (req, res) => {
+    app.post('/testpost', (req, res) => {
         // You'll create your note here.
-        res.send('Hello')
+        var response = {}
+        var status = 1;
+
+        var message = "success";
+        var data = [];
+        var param = req.body.param;
+
+        var datum = {param:param}
+        data.push(datum)
+
+
+        response["status"] = status;
+        response["message"] = message;
+        response["data"] = data;
+
+        res.send(JSON.parse(JSON.stringify(response)))
     });
 
     app.get('/testapi', (req,res)=>{
-        var response = {} // empty Object
+        var response = {}
         var status = 1;
-        var message = "success"
+        var message = "success";
 
         var customer1 = {id:1,name:"Agus Sarwono",address:"Jogja"}
         var customer2 = {id:2,name:"Silvia",address:"Jakarta"}

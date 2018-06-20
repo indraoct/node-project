@@ -1,9 +1,16 @@
 var ObjectID = require('mongodb').ObjectID;
+var response = {};
+var status = 0;
+var message = "failed";
+var data = [];
 
    exports.getAllJobs = function (db,req,res) {
        db.collection("jobs").find({}).toArray(function(err, result) {
            if (err) throw err;
-            res.send(result);
+            response["status"] = 1;
+            response["message"] = "success";
+            response["data"] = result;
+            res.send(response);
        });
    }
 
@@ -14,10 +21,13 @@ var ObjectID = require('mongodb').ObjectID;
            if (err) {
                res.send({'error':'An error has occurred'});
            } else {
-               res.send(item);
+               data.push(item);
+               response["status"] = 1;
+               response["message"] = "success";
+               response["data"] = data;
+               res.send(response);
        }
        });
-
-
    }
+
 

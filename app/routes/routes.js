@@ -8,4 +8,8 @@ module.exports = function(app, db) {
     app.get('/getjob/:id',(req,res)=>{
         jobsController.getJob(db,req,res);
     })
+
+    app.post('/insertjobs',(req,res)=>{
+
+    })
 }

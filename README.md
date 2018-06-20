@@ -8,28 +8,28 @@ DB Name : ajobthing
 
 Collections :       
 1. jobs   
-   - id INT     
-   - id_employer INT        
+   - id TEXT     
+   - id_employer TEXT        
    - description   TEXT     
    - status (0:draft, 1:open, 2:close) INT      
    - created_date DATETIME      
    - updated_date DATETIME      
         
 2. employers     
-   - id INT            
+   - id TEXT            
    - name TEXT                        
    - company  TEXT        
       
 3. frelancers
-   - id INT     
+   - id TEXT     
    - name   TEXT 
    - username TEXT          
    - password TEXT         
    - points INT              
    
 4. freelancer_jobs  
-   - id INT     
-   - id_freelancer INT  
+   - id TEXT     
+   - id_freelancer TEXT  
    - id_job INT 
    - status INT (0:initial,1:submit,2:completed)
    - created_date DATETIME         

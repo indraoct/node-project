@@ -36,6 +36,35 @@ Collections :
    - updated_date  DATETIME     
    - created_by TEXT
    - updated_by TEXT  
+   
+**Business Flow**
+
+1. Employer Insert data Jobs 
+   ```
+        HTTP POST       
+        http://localhost:8888/insertjob     
+        
+        param :
+        - id_employer   
+        - description       
+        - status (0=draft;1=publish)        
+
+   ```      
+2. Employer can update the status of the job
+   ```
+        HTTP PUT        
+        http://localhost:8888/updatejobstatus/{id_jobs}         
+        param :
+        - status  (0=draft;1=publish)         
+
+   ``` 
+
+3. Freelancer can see the job list (job with status = publish)
+    ```
+        HTTP GET 
+        http://localhost:8888/getalljobs        
+  
+    ```     
           
 
 **How To run the application :**        

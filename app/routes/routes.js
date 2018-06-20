@@ -1,11 +1,11 @@
+const jobsController = require('../controllers/jobsController');
 module.exports = function(app, db) {
 
     app.get('/getalljobs',(req,res)=>{
+        jobsController.getAllJobs(db,req,res);
+    })
 
-        db.collection("jobs").find({}).toArray(function(err, result) {
-            if (err) throw err;
-            res.send(result);
-        });
-
+    app.get('/getjob/:id',(req,res)=>{
+        jobsController.getJob(db,req,res);
     })
 }

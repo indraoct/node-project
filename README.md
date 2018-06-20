@@ -65,6 +65,16 @@ Collections :
         http://localhost:8888/getalljobs        
   
     ```     
+    
+4. Freelancer can register to MX100 apps        
+
+5. Freelancer can login to MX100 apps
+
+6. Freelancer can initiate do the jobs
+
+7. Freelancer can submit the application for the jobs
+
+8. Employer can update status work is completed
           
 
 **How To run the application :**        

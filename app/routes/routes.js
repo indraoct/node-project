@@ -12,4 +12,8 @@ module.exports = function(app, db) {
     app.post('/insertjob',(req,res)=>{
         jobsController.insertJob(db,req,res);
     })
+
+    app.put('/updatejobstatus/:id',(req,res)=>{
+        jobsController.updateJobStatus(db,req,res);
+    })
 }

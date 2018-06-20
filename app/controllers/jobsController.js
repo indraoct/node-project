@@ -60,4 +60,25 @@ var data = [];
          });
      };
 
+   exports.updateJobStatus = function (db,req,res){
+       var id = req.params.id;
+       var status = parseInt(req.body.status);
+
+       var query = { '_id': new ObjectID(id) };
+       var values = { $set: { status: status,updated_date:new Date()} };
+
+
+       db.collection("jobs").updateOne(query, values, (err, result) => {
+           if (err) {
+               response["status"] = 0;
+               response["message"] = "error: An error has occurred'";
+           } else {
+               response["status"] = 1;
+               response["message"] = "Success'";
+               response["data"] = result;
+           }
+       res.send(response);
+        });
+   }
+
 

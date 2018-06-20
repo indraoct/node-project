@@ -20,7 +20,7 @@ Collections :
    - name TEXT                        
    - company  TEXT        
       
-3. frelancers
+3. freelancers
    - id TEXT     
    - name   TEXT 
    - username TEXT          

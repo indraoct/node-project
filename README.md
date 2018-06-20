@@ -22,14 +22,16 @@ Collections :
       
 3. frelancers
    - id INT     
-   - name   TEXT    
+   - name   TEXT 
+   - username TEXT          
+   - password TEXT         
    - points INT              
    
 4. freelancer_jobs  
    - id INT     
    - id_freelancer INT  
    - id_job INT 
-   - status INT (0:initial,1:submit,)
+   - status INT (0:initial,1:submit,2:completed)
    - created_date DATETIME         
    - updated_date  DATETIME     
    - created_by TEXT

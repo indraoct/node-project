@@ -9,7 +9,7 @@ module.exports = function(app, db) {
         jobsController.getJob(db,req,res);
     })
 
-    app.post('/insertjobs',(req,res)=>{
-
+    app.post('/insertjob',(req,res)=>{
+        jobsController.insertJob(db,req,res);
     })
 }

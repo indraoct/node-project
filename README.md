@@ -79,7 +79,15 @@ Collections :
 
     ```
 
-5. Freelancer can login to MX100 apps
+5. Freelancer can login to MX100 apps (get token)
+    ```
+        HTTP POST
+        http://localhost:8888/userlogin      
+        param :
+        - email 
+        - password       
+    
+    ```
 
 6. Freelancer can initiate do the jobs
 

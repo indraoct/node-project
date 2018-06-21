@@ -135,6 +135,11 @@ install dependencies :
     npm install valid-objectid
 
 ```
+in terminal please create database on mongo db :            
+
+```
+    use ajobthing
+```
 
 Go to the root path, then run this script:      
 ```

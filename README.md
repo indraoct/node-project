@@ -102,7 +102,7 @@ Collections :
     
     ```
 
-7. Freelancer can submit the application for the jobs (status job : submited)
+7. Freelancer can submit the application for the jobs (status job : submited) --> point -2
     ```
         HTTP POST
         http://localhost:8888/submitjob

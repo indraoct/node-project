@@ -1,4 +1,5 @@
 const jobsController = require('../controllers/jobsController');
+const usersController = require('../controllers/usersController');
 module.exports = function(app, db) {
 
     app.get('/getalljobs',(req,res)=>{
@@ -15,5 +16,9 @@ module.exports = function(app, db) {
 
     app.put('/updatejobstatus/:id',(req,res)=>{
         jobsController.updateJobStatus(db,req,res);
+    })
+
+    app.post('/userregister',(req,res)=>{
+        usersController.userRegister(db,req,res);
     })
 }

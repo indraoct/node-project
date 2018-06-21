@@ -21,21 +21,22 @@ Collections :
    - company  TEXT        
       
 3. freelancers
-   - id TEXT     
-   - name   TEXT 
-   - username TEXT          
-   - password TEXT         
+   - id TEXT           
+   - name   TEXT         
+   - email TEXT               
+   - password TEXT      
+   - token TEXT              
    - points INT              
    
 4. freelancer_jobs  
    - id TEXT     
    - id_freelancer TEXT  
    - id_job INT 
-   - status INT (0:initial,1:submit,2:completed)
-   - created_date DATETIME         
-   - updated_date  DATETIME     
-   - created_by TEXT
-   - updated_by TEXT  
+   - status INT (0:initial,1:submit,2:completed)        
+   - created_date DATETIME          
+   - updated_date  DATETIME         
+   - created_by TEXT        
+   - updated_by TEXT        
    
 **Business Flow**
 
@@ -67,6 +68,7 @@ Collections :
     ```     
     
 4. Freelancer can register to MX100 apps        
+    
 
 5. Freelancer can login to MX100 apps
 

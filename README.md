@@ -90,6 +90,17 @@ Collections :
     ```
 
 6. Freelancer can initiate do the jobs
+    ```
+        HTTP POST   
+        http://localhost:8888/initjob       
+        header :        
+        - token     
+           
+        param :     
+        - email         
+        - id_job             
+    
+    ```
 
 7. Freelancer can submit the application for the jobs
 

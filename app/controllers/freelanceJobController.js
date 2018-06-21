@@ -48,7 +48,7 @@ var data = [];
                                         updated_by:""
                                     };
 
-                                    db.collection('freelancer_job').insert(freelancer_job, (err, result) => {
+                                    db.collection('freelancer_jobs').insert(freelancer_job, (err, result) => {
                                         if(err){
                                             response["status"] = 0;
                                             response["message"] = "error: An error has occurred'";
@@ -103,13 +103,13 @@ var data = [];
     }
 
     function isUserAlreadyInitJob(db,email,id_job,callback){
-        const details = { email_freelancer:email,_id:ObjectID(id_job)};
+        const details = { email_freelancer:email,id_job:ObjectID(id_job)};
         db.collection('freelancer_jobs').findOne(details, (err, item) => {
             if (err) {
                 callback(false);
             } else {
                 if(item == null) {
-            callback(false);
+                    callback(false);
                 }else{
                     callback(true);
                 }

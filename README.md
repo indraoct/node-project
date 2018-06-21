@@ -89,7 +89,7 @@ Collections :
     
     ```
 
-6. Freelancer can initiate do the jobs
+6. Freelancer can initiate do the jobs (status job : initialized)
     ```
         HTTP POST   
         http://localhost:8888/initjob       
@@ -102,7 +102,18 @@ Collections :
     
     ```
 
-7. Freelancer can submit the application for the jobs
+7. Freelancer can submit the application for the jobs (status job : submited)
+    ```
+        HTTP POST
+        http://localhost:8888/submitjob
+        - token     
+                   
+        param :     
+        - email         
+        - id_job  
+        
+
+    ```
 
 8. Employer can update status work is completed
           
@@ -112,7 +123,8 @@ Collections :
 install dependencies :
 ```
     npm install md5
-    npm install crypto-browserify@3.11.0   
+    npm install crypto-browserify@3.11.0  
+    npm install valid-objectid
 
 ```
 

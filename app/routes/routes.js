@@ -31,4 +31,8 @@ module.exports = function(app, db) {
         freelanceJobController.initFreelanceJob(db,req,res);
     })
 
+    app.post('/submitjob',(req,res)=>{
+        freelanceJobController.submitFreelanceJob(db,req,res);
+    })
+
 }

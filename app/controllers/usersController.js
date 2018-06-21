@@ -1,4 +1,3 @@
-var ObjectID = require('mongodb').ObjectID;
 var crypto = require('crypto');
 var md5 = require('md5');
 var response = {};
@@ -9,6 +8,7 @@ var data = [];
     //User Register
     exports.userRegister = function(db,req,res) {
         response["status"] = 0;
+        response["data"] = [];
         var name = req.body.name;
         var email = req.body.email;
         var password = req.body.password;
@@ -61,6 +61,7 @@ var data = [];
     //User Login
     exports.userLogin = function(db,req,res){
         response["status"] = 0;
+        response["data"] = [];
         var email = req.body.email;
         var password = req.body.password;
 

@@ -90,6 +90,13 @@ Collections :
 
 **How To run the application :**        
 
+install dependencies :
+```
+    npm install md5
+    npm install crypto-browserify@3.11.0   
+
+```
+
 Go to the root path, then run this script:      
 ```
     node server.js

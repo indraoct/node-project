@@ -21,4 +21,8 @@ module.exports = function(app, db) {
     app.post('/userregister',(req,res)=>{
         usersController.userRegister(db,req,res);
     })
+
+    app.post('/userlogin',(req,res)=>{
+        usersController.userLogin(db,req,res);
+})
 }

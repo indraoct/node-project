@@ -1,5 +1,6 @@
 const jobsController = require('../controllers/jobsController');
 const usersController = require('../controllers/usersController');
+const freelanceJobController = require('../controllers/freelanceJobController');
 module.exports = function(app, db) {
 
     app.get('/getalljobs',(req,res)=>{
@@ -24,5 +25,10 @@ module.exports = function(app, db) {
 
     app.post('/userlogin',(req,res)=>{
         usersController.userLogin(db,req,res);
-})
+    })
+
+    app.post('/initjob',(req,res)=>{
+        freelanceJobController.initFreelanceJob(db,req,res);
+    })
+
 }

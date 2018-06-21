@@ -52,7 +52,7 @@ var data = [];
                             response["data"] = result.ops[0];
                             res.send(response);
                         }
-                });
+                    });
                 }
             });
         }

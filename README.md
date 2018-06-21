@@ -30,7 +30,7 @@ Collections :
    
 4. freelancer_jobs  
    - id TEXT     
-   - id_freelancer TEXT  
+   - email_freelancer TEXT  
    - id_job INT 
    - status INT (0:initial,1:submit,2:completed)        
    - created_date DATETIME          

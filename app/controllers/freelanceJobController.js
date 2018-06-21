@@ -142,6 +142,50 @@ var data = [];
 
     }
 
+    // completed the job by employer
+    exports.completedFreelanceJob = function(db,req,res){
+        response["status"] = 0;
+        var id_job = req.body.id_job;
+        var id_employer = req.body.id_employer;
+        var email = req.body.email;
+
+        if(email == undefined || email == "") {
+            response["message"] = "email can not be empty";
+            res.send(response);
+        }else if(id_job == undefined || id_job == "") {
+            response["message"] = "id job can not be empty";
+            res.send(response);
+        }else if(CheckOjectID.isValid(id_job) == false){
+            response["message"] = "wrong id job";
+            res.send(response);
+        }else if(CheckOjectID.isValid(id_employer) == false){
+            response["message"] = "wrong id employer";
+            res.send(response);
+        }else{
+            isUserAlreadySubmitJob(db,email,id_job,function(result_already){
+                if(result_already == false){
+                    response["message"] = "freelancer must submit the job first!";
+                    res.send(response);
+                }else {
+                    var query = {email_freelancer: email, id_job: ObjectID(id_job)};
+                    var values = {$set: {status: 2, updated_date: new Date(), updated_by: ObjectID(id_employer)}};
+
+                    db.collection("freelancer_jobs").updateOne(query, values, (err, result) => {
+                        if (err) {
+                            response["status"] = 0;
+                            response["message"] = "error: An error has occurred'";
+                            res.send(response);
+                        } else {
+                            response["status"] = 1;
+                            response["message"] = "Success'";
+                        }
+                            res.send(response);
+                    });
+                }
+            });
+        }
+    }
+
 
     function isJobExist(db,id_job,callback){
         const details = {"_id":ObjectID(id_job),status:1};
@@ -182,6 +226,21 @@ var data = [];
             } else {
                 if(item == null) {
                     callback(false);
+                }else{
+                    callback(true);
+                }
+            }
+            });
+    }
+
+    function isUserAlreadySubmitJob(db,email,id_job,callback){
+        const details = { email_freelancer:email,id_job:ObjectID(id_job),status:1};
+        db.collection('freelancer_jobs').findOne(details, (err, item) => {
+            if (err) {
+                callback(false);
+            } else {
+                if(item == null) {
+            callback(false);
                 }else{
                     callback(true);
                 }

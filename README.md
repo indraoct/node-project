@@ -115,7 +115,15 @@ Collections :
 
     ```
 
-8. Employer can update status work is completed
+8. Employer can update status work is completed (status job : completed)
+    ```
+        HTTP POST   
+        http://localhost:8888/completedjob  
+        param :
+        - id_employer
+        - email     
+        - id_job              
+    ```
           
 
 **How To run the application :**        

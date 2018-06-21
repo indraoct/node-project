@@ -68,7 +68,16 @@ Collections :
     ```     
     
 4. Freelancer can register to MX100 apps        
-    
+    ```
+        HTTP POST
+        http://localhost:8888/userregister      
+        param :
+        - name  
+        - email 
+        - password
+        - password_confirmation         
+
+    ```
 
 5. Freelancer can login to MX100 apps
 

@@ -5,7 +5,8 @@ var message = "failed";
 var data = [];
 
    exports.getAllJobs = function (db,req,res) {
-       db.collection("jobs").find({}).toArray(function(err, result) {
+       var query = { status: 1 };
+       db.collection("jobs").find(query).toArray(function(err, result) {
            if (err) throw err;
             response["status"] = 1;
             response["message"] = "success";
